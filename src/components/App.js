@@ -3,17 +3,24 @@ import RecipeList from './RecipeList'
 import '../css/app.css'
 import { v4 as uuidv4 } from 'uuid'
 
+export const RecipeContext = React.createContext()
+
 export default function App() {
   const [recipes, setRecipes] = useState(sampleRecipes)
+
+  const recipeContextValue = {
+    handleRecipeAdd,
+    handleRecipeDelete
+  }
 
   function handleRecipeAdd() {
     const newRecipe = {
       id: uuidv4(),
       name: '*Placeholder*',
-      servings: 1,
-      cookTime: '1:00',
-      instructions: 'COOK',
-      ingredients: [{ id: uuidv4(), name: '*Placeholder*', amount: '1 Tbs' }]
+      cookTime: '1:45',
+      servings: 3,
+      instructions: '1. PREP\n2. COOK \n3. EAT',
+      ingredients: [{ id: uuidv4(), name: 'Chicken', amount: '2 Pounds' }]
     }
 
     setRecipes([...recipes, newRecipe])
@@ -24,11 +31,9 @@ export default function App() {
   }
 
   return (
-    <RecipeList
-      recipes={recipes}
-      handleRecipeAdd={handleRecipeAdd}
-      handleRecipeDelete={handleRecipeDelete}
-    />
+    <RecipeContext.Provider value={recipeContextValue}>
+      <RecipeList recipes={recipes} />
+    </RecipeContext.Provider>
   )
 }
 
@@ -41,7 +46,7 @@ const sampleRecipes = [
     instructions:
       '1. Put salt on chicken\n2. Put chicken in oven\n3. Eat chicken',
     ingredients: [
-      { id: 1, name: 'Chicken', amount: '2 Pounts' },
+      { id: 1, name: 'Chicken', amount: '2 Pounds' },
       { id: 2, name: 'Salt', amount: '1 Tbs' }
     ]
   },

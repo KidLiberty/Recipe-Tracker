@@ -64,4 +64,17 @@ textarea.recipe-edit__input {
   .recipe-edit__ingredient-grid {
     grid-template-columns: 1fr;
   }
+  .recipe-edit__add-ingredient-btn-container {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .recipe-edit__add-ingredient-btn-container {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+  }
 }

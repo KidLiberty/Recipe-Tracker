@@ -10,8 +10,22 @@
   text-align: center;
 }
 
-.btn {
+@media (max-width: 1000px) {
+  .recipe-list {
+    font-size: 20px;
+  }
+  .recipe-edit__ingredient-grid .btn--danger {
+    font-size: 18px;
+    width: 50px;
+  }
 }
 
-.btn--primary {
+@media (max-width: 600px) {
+  .recipe-list {
+    font-size: 16px;
+  }
+  .recipe-edit__ingredient-grid .btn--danger {
+    font-size: 16px;
+    width: 50px;
+  }
 }

@@ -18,17 +18,9 @@ export default function RecipeList({ recipes }) {
         onChange={e => setSearchedRecipe(e.target.value.toLowerCase())}
       />
       <div>
-        {input.value !== ''
-          ? recipes
-              .filter(recipe =>
-                recipe.name.toLowerCase().includes(searchedRecipe.toLowerCase())
-              )
-              .map(recipe => {
-                return <Recipe key={recipe.id} {...recipe} />
-              })
-          : recipes.map(recipe => {
-              return <Recipe key={recipe.id} {...recipe} />
-            })}
+        {recipes.map(recipe => {
+          return <Recipe key={recipe.id} {...recipe} />
+        })}
       </div>
       <div className='recipe-list__add-recipe-btn-container'>
         <button className='btn btn--primary' onClick={handleRecipeAdd}>

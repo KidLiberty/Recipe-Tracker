@@ -1,11 +1,10 @@
-import React, { useState, useRef, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import Recipe from './Recipe'
 import { RecipeContext } from './App'
 
 export default function RecipeList({ recipes }) {
   const [searchedRecipe, setSearchedRecipe] = useState('')
   const { handleRecipeAdd } = useContext(RecipeContext)
-  const myRef = useRef()
 
   return (
     <div className='recipe-list'>
@@ -15,8 +14,6 @@ export default function RecipeList({ recipes }) {
         id='search'
         placeholder='Search...'
         className='recipe-edit__input'
-        value={searchedRecipe}
-        ref={myRef}
         onChange={e => setSearchedRecipe(e.target.value)}
       />
       <div>

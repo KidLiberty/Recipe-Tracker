@@ -72,6 +72,7 @@ const sampleRecipes = [
   {
     id: 1,
     name: "Mark's Kickin' Classic Breast of Chicken",
+    author: 'Mark',
     cookTime: '20 minutes @ 425°',
     servings: 3,
     instructions:
@@ -84,7 +85,6 @@ const sampleRecipes = [
       { id: 5, name: 'Brown Sugar', amount: '1 1/2 Tbsp' },
       { id: 6, name: 'Dried Oregano or Thyme', amount: '1 Tsp' },
       { id: 7, name: 'Garlic Powder', amount: '1/4 Tsp' }
-    ],
-    author: 'Mark'
+    ]
   }
 ]

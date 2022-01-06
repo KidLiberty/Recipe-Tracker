@@ -32,6 +32,13 @@
   font-weight: 300;
 }
 
+.btn-div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 10px;
+}
+
 .recipe__value--indented {
   margin-top: 10px;
   margin-left: 20px;

@@ -39,7 +39,8 @@ export default function App() {
       cookTime: '',
       servings: 1,
       instructions: '',
-      ingredients: [{ id: uuidv4(), name: '', amount: '' }]
+      ingredients: [{ id: uuidv4(), name: '', amount: '' }],
+      author: ''
     }
     setSelectedRecipeId(newRecipe.id)
     setRecipes([...recipes, newRecipe])
@@ -83,6 +84,7 @@ const sampleRecipes = [
       { id: 5, name: 'Brown Sugar', amount: '1 1/2 Tbsp' },
       { id: 6, name: 'Dried Oregano or Thyme', amount: '1 Tsp' },
       { id: 7, name: 'Garlic Powder', amount: '1/4 Tsp' }
-    ]
+    ],
+    author: 'Mark'
   }
 ]

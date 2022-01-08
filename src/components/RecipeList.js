@@ -1,10 +1,16 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useMemo } from 'react'
 import Recipe from './Recipe'
 import { RecipeContext } from './App'
 
 export default function RecipeList({ recipes }) {
   const [searchedRecipe, setSearchedRecipe] = useState('')
   const { handleRecipeAdd } = useContext(RecipeContext)
+
+  const filteredRecipes = useMemo(() => {
+    return recipes.filter(recipe =>
+      recipe.name.toLowerCase().includes(searchedRecipe.toLowerCase())
+    )
+  }, [recipes, searchedRecipe])
 
   return (
     <div className='recipe-list'>
@@ -18,13 +24,9 @@ export default function RecipeList({ recipes }) {
       />
       <div>
         {searchedRecipe !== ''
-          ? recipes
-              .filter(recipe =>
-                recipe.name.toLowerCase().includes(searchedRecipe.toLowerCase())
-              )
-              .map(recipe => {
-                return <Recipe key={recipe.id} {...recipe} />
-              })
+          ? filteredRecipes.map(recipe => {
+              return <Recipe key={recipe.id} {...recipe} />
+            })
           : recipes.map(recipe => {
               return <Recipe key={recipe.id} {...recipe} />
             })}

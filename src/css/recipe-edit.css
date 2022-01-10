@@ -21,6 +21,25 @@
   font-size: 1.5rem;
 }
 
+.recipe-edit__lock-recipe-container {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 15px;
+}
+
+.recipe-edit__recipe-lock-checkbox {
+  width: 0.85rem;
+  height: 0.85rem;
+  padding: 10px;
+  margin: 10x;
+}
+
+.recipe-edit__lock-icon {
+  font-size: 50px;
+  padding-bottom: 20px;
+  padding-left: 6px;
+}
+
 .recipe-edit__details-grid {
   display: grid;
   grid-template-columns: auto 1fr;

@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import RecipeIngredientEdit from './RecipeIngredientEdit'
 import { v4 as uuidv4 } from 'uuid'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLock, faUnlock } from '@fortawesome/free-solid-svg-icons'
 import { RecipeContext } from './App'
 
 export default function RecipeEdit({ recipe }) {
@@ -29,7 +31,7 @@ export default function RecipeEdit({ recipe }) {
   function handleIngredientDelete(id) {
     handleChange({ ingredients: recipe.ingredients.filter(i => i.id !== id) })
   }
-
+  console.log(recipe.isLocked)
   return (
     <div className='recipe-edit'>
       <div className='recipe-edit__remove-button-container'>
@@ -40,6 +42,20 @@ export default function RecipeEdit({ recipe }) {
           &times;
         </button>
       </div>
+      <span className='recipe-edit__lock-recipe-container'>
+        <input
+          type='checkbox'
+          className='recipe-edit__recipe-lock-checkbox'
+          checked={recipe.isLocked}
+          onChange={e => handleChange({ isLocked: e.target.checked })}
+        />
+        {recipe.isLocked ? (
+          <FontAwesomeIcon className='recipe-edit__lock-icon' icon={faLock} />
+        ) : (
+          <FontAwesomeIcon className='recipe-edit__lock-icon' icon={faUnlock} />
+        )}
+      </span>
+
       <div className='recipe-edit__details-grid'>
         <label htmlFor='name' className='recipe-edit__label'>
           Name

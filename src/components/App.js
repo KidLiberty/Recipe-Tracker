@@ -21,7 +21,7 @@ export default function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes))
   }, [recipes])
 
-  const recipeContextValue = {
+  const RecipeContextValue = {
     handleRecipeAdd,
     handleRecipeDelete,
     handleRecipeSelect,
@@ -36,11 +36,12 @@ export default function App() {
     const newRecipe = {
       id: uuidv4(),
       name: '',
+      author: '',
+      isLocked: false,
       cookTime: '',
       servings: 1,
       instructions: '',
-      ingredients: [{ id: uuidv4(), name: '', amount: '' }],
-      author: ''
+      ingredients: [{ id: uuidv4(), name: '', amount: '' }]
     }
     setSelectedRecipeId(newRecipe.id)
     setRecipes([...recipes, newRecipe])
@@ -55,13 +56,13 @@ export default function App() {
 
   function handleRecipeChange(id, recipe) {
     const newRecipes = [...recipes]
-    const index = newRecipes.findIndex(r => r.id === id)
+    const index = recipes.findIndex(r => r.id === id)
     newRecipes[index] = recipe
     setRecipes(newRecipes)
   }
 
   return (
-    <RecipeContext.Provider value={recipeContextValue}>
+    <RecipeContext.Provider value={RecipeContextValue}>
       <RecipeList recipes={recipes} />
       {selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
     </RecipeContext.Provider>
@@ -73,6 +74,7 @@ const sampleRecipes = [
     id: 1,
     name: "Mark's Kickin' Classic Breast of Chicken",
     author: 'Mark',
+    isLocked: false,
     cookTime: '20 minutes @ 425°',
     servings: 3,
     instructions:

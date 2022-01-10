@@ -31,7 +31,7 @@ export default function RecipeEdit({ recipe }) {
   function handleIngredientDelete(id) {
     handleChange({ ingredients: recipe.ingredients.filter(i => i.id !== id) })
   }
-  console.log(recipe.isLocked)
+
   return (
     <div className='recipe-edit'>
       <div className='recipe-edit__remove-button-container'>
@@ -55,7 +55,6 @@ export default function RecipeEdit({ recipe }) {
           <FontAwesomeIcon className='recipe-edit__lock-icon' icon={faUnlock} />
         )}
       </span>
-
       <div className='recipe-edit__details-grid'>
         <label htmlFor='name' className='recipe-edit__label'>
           Name

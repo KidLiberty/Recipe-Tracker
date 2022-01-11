@@ -3,7 +3,7 @@ import Recipe from './Recipe'
 import { RecipeContext } from './App'
 
 export default function RecipeList({ recipes }) {
-  const [searchedRecipe, setSearchedRecipe] = useState('')
+  const [searchedRecipe, setSearchedRecipe] = useState()
   const { handleRecipeAdd } = useContext(RecipeContext)
 
   const filteredRecipes = useMemo(() => {

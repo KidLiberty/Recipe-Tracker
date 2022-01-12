@@ -22,9 +22,9 @@ export default function App() {
   }, [recipes])
 
   const RecipeContextValue = {
+    handleRecipeSelect,
     handleRecipeAdd,
     handleRecipeDelete,
-    handleRecipeSelect,
     handleRecipeChange
   }
 

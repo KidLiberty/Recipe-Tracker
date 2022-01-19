@@ -51,7 +51,8 @@ export default function App() {
     if (selectedRecipeId != null && selectedRecipeId === id) {
       setSelectedRecipeId(undefined)
     }
-    setRecipes(recipes.filter(recipe => recipe.id !== id))
+    const filteredRecipes = recipes.filter(recipe => recipe.id !== id)
+    setRecipes(filteredRecipes)
   }
 
   function handleRecipeChange(id, recipe) {

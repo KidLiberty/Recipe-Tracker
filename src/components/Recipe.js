@@ -4,7 +4,7 @@ import IngredientList from './IngredientList'
 import { RecipeContext } from './App'
 
 export default function Recipe(props) {
-  const { handleRecipeDelete, handleRecipeSelect } = useContext(RecipeContext)
+  const { handleRecipeSelect, handleRecipeDelete } = useContext(RecipeContext)
   const {
     id,
     name,
@@ -27,7 +27,7 @@ export default function Recipe(props) {
         <div className='btn-div'>
           <button
             className='btn btn--primary mr1'
-            onClick={() => handleRecipeSelect(id)}
+            onClick={handleRecipeSelect(id)}
           >
             Edit
           </button>

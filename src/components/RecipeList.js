@@ -7,7 +7,9 @@ export default function RecipeList({ recipes }) {
   const { handleRecipeAdd } = useContext(RecipeContext)
 
   const filteredRecipes = useMemo(() => {
-    return recipes.filter( recipe => recipe.name.toLowerCase().includes(searchedRecipes.toLowerCase()))
+    return recipes.filter(recipe =>
+      recipe.name.toLowerCase().includes(searchedRecipe.toLowerCase())
+    )
   }, [recipes, searchedRecipe])
 
   return (

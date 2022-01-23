@@ -57,7 +57,7 @@ export default function App() {
 
   function handleRecipeChange(id, recipe) {
     const newRecipes = [...recipes]
-    const index = recipes.findIndex(r => r.id === id)
+    const index = newRecipes.findIndex(r => r.id === id)
     newRecipes[index] = recipe
     setRecipes(newRecipes)
   }

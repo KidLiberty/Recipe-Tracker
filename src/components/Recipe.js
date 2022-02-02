@@ -27,7 +27,7 @@ export default function Recipe(props) {
         <div className='btn-div'>
           <button
             className='btn btn--primary mr1'
-            onClick={handleRecipeSelect(id)}
+            onClick={() => handleRecipeSelect(id)}
           >
             Edit
           </button>

@@ -14,7 +14,7 @@ export default function App() {
 
   useEffect(() => {
     const recipeJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
-    if (recipeJSON != null) setRecipes(JSON.parse(recipeJSON))
+    if (recipeJSON !== null) return setRecipes(JSON.parse(recipeJSON))
   }, [])
 
   useEffect(() => {

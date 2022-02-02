@@ -12,13 +12,6 @@ export default function RecipeEdit({ recipe }) {
     handleRecipeChange(recipe.id, { ...recipe, ...changes })
   }
 
-  function handleIngredientChange(id, ingredient) {
-    const newIngredients = [...recipe.ingredients]
-    const index = newIngredients.findIndex(i => i.id === id)
-    newIngredients[index] = ingredient
-    handleChange({ ingredients: newIngredients })
-  }
-
   function handleIngredientAdd() {
     const newIngredient = {
       id: uuidv4(),
@@ -30,6 +23,13 @@ export default function RecipeEdit({ recipe }) {
 
   function handleIngredientDelete(id) {
     handleChange({ ingredients: recipe.ingredients.filter(i => i.id !== id) })
+  }
+
+  function handleIngredientChange(id, ingredient) {
+    const newIngredients = [...recipe.ingredients]
+    const index = newIngredients.findIndex(i => i.id === id)
+    newIngredients[index] = ingredient
+    handleChange({ ingredients: newIngredients })
   }
 
   return (

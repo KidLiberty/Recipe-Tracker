@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
 import RecipeIngredientEdit from './RecipeIngredientEdit'
 import { v4 as uuidv4 } from 'uuid'
+
+import { RecipeContext } from './App'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock, faUnlock } from '@fortawesome/free-solid-svg-icons'
-import { RecipeContext } from './App'
 
 export default function RecipeEdit({ recipe }) {
   const { handleRecipeChange, handleRecipeSelect } = useContext(RecipeContext)

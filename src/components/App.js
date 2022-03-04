@@ -77,7 +77,7 @@ const sampleRecipes = [
     author: 'Mark',
     isLocked: false,
     cookTime: '20 minutes @ 425°',
-    servings: 3,
+    servings: 4,
     instructions:
       '1.) Preheat oven to 425°F/220°C (200°C fan).\n2.) Pound chicken to 1.5cm / 0.6" at the thickest part - using a rolling pin, meat mallet or even your fist (key tip for even cooking + tender chicken).\n3.) Mix Seasoning.\n4.) Line tray with foil and baking / parchment paper. Place chicken upside down on tray. Drizzle chicken with about 1 tsp oil. Rub over with fingers. Sprinkle with Seasoning.\n5.) Flip chicken. Drizzle with 1 tsp oil, rub with fingers, sprinkle with Seasoning, covering as much of the surface area as you can.\n6.) Bake 18 minutes, or until surface is golden per photos and video, or internal temperature is 165°F/75°C using a meat thermometer.\n7.) Remove from oven and immediately transfer chicken to serving plates.\n8.) Wait 3 - 5 minutes before serving, garnished with freshly chopped parsley if desired. Pictured with a side of Garlic Butter Rice with Kale.',
     ingredients: [

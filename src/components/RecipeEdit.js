@@ -27,11 +27,17 @@ export default function RecipeEdit({ recipe }) {
     handleChange({ ingredients: recipe.ingredients.filter(i => i.id !== id) })
   }
 
-  function handleIngredientChange(id, ingredient) {
-    const newIngredients = [...recipe.ingredients]
-    const index = newIngredients.findIndex(i => i.id === id)
-    newIngredients[index] = ingredient
-    handleChange({ ingredients: newIngredients })
+  function handleIngredientChange(id, changes) {
+    // const newIngredients = [...recipe.ingredients]
+    // const index = newIngredients.findIndex(i => i.id === id)
+    // newIngredients[index] = ingredient
+    // handleChange({ ingredients: newIngredients })
+
+    handleChange(
+      recipe.ingredients.map(ingredient =>
+        ingredient.id === id ? { ...ingredient, ...changes } : ingredient
+      )
+    )
   }
 
   return (

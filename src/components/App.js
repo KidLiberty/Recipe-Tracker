@@ -55,11 +55,17 @@ export default function App() {
     setRecipes(filteredRecipes)
   }
 
-  function handleRecipeChange(id, recipe) {
-    const newRecipes = [...recipes]
-    const index = newRecipes.findIndex(r => r.id === id)
-    newRecipes[index] = recipe
-    setRecipes(newRecipes)
+  function handleRecipeChange(id, changes) {
+    // const newRecipes = [...recipes]
+    // const index = newRecipes.findIndex(r => r.id === id)
+    // newRecipes[index] = recipe
+    // setRecipes(newRecipes)
+
+    setRecipes(
+      recipes.map(recipe =>
+        recipe.id === id ? { ...recipe, ...changes } : recipe
+      )
+    )
   }
 
   return (
